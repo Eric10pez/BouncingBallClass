@@ -1,4 +1,52 @@
-# Gitignore for APCSA Mr. Diaz Santa Fe High School
+// Global Variables
+int x = (int) (Math.random()*1200);
+int y = (int) (Math.random()*800);
+int xSpeed = 50;
+int ySpeed = 50;
 
-# Ignore compiled processing class files
-build-tmp/
+
+//setup method
+public void setup()
+{
+  size(1200,800);
+  stroke(0);
+  strokeWeight(15); 
+  //fullScreen();
+  background( 230, 70, 150);
+  colorMode(HSB, 245, 1, 1);
+  //width   height
+ellipse(x, y, 50, 50);  
+}
+
+// draw method
+public void draw()
+{
+ background((int)(Math.random()*255),(int)(Math.random()*255),((int) (Math.random()*255 )));
+ x+= xSpeed;
+ y+= ySpeed;
+ ellipse(x, y, 50 , 50);
+ rect(x,y,50,50);
+ if ( x > 1200)
+ {
+  
+   xSpeed = -1* xSpeed;
+  fill((int)(Math.random()*360),(float)(Math.random()),((float) (Math.random())));
+ }
+  if (y>800)
+ {
+  ySpeed = -1*ySpeed;
+fill((int)(Math.random()*360),(float)(Math.random()),((float) (Math.random())));
+}
+   if ( x <0)
+  {
+  xSpeed = -1* xSpeed;
+  fill((int)(Math.random()*360),(float)(Math.random()),((float) (Math.random())));
+   
+  }
+  if (y<0)
+  {
+    
+  ySpeed = -1*ySpeed; 
+  fill((int)(Math.random()*360),(float)(Math.random()),((float) (Math.random())));
+  }
+}
